@@ -1,0 +1,29 @@
+{
+  "name": "conta_bancaria_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^25.3.5",
+    "readline-sync": "^1.4.10",
+    "undici-types": "^7.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conteudoGeneration/conta_bancaria_typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/conteudoGeneration/conta_bancaria_typescript/issues"
+  },
+  "homepage": "https://github.com/conteudoGeneration/conta_bancaria_typescript#readme",
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.8"
+  }
+}
