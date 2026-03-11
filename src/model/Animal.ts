@@ -1,9 +1,9 @@
 /**
  * Autora: Beatriz Braga Silva
- * Data: 10/03/2026
-**/
+ * Data: 10/03
+ */
 
-//classe Animal
+//importações
 export class Animal{
 
     //atributos
@@ -13,13 +13,13 @@ export class Animal{
     private _cor!: string;
 
     //construtor
-    // constructor(nome:string, idade:number, especie:string, cor:string){
-    //     this._nome=nome;
-    //     this._idade=idade;
-    //     this._especie=especie;
-    //     this._cor=cor;
+    // constructor(nome: string, idade: number, especie: string, cor: string){
+    //    this._nome = nome;
+    //    this._idade = idade;
+    //    this._especie = especie;
+    //    this._cor = cor;
     // }
-    constructor(){}
+    constructor(){};
 
     //get
     public get nome(): string{
@@ -27,7 +27,7 @@ export class Animal{
     }
     public get idade(): number{
         return this._idade;
-    }
+    }   
     public get especie(): string{
         return this._especie;
     }
@@ -36,23 +36,26 @@ export class Animal{
     }
 
     //set
-    public set nome(nome:string) {
-        this._nome = nome;
+    public set nome(valor: string){
+        this._nome = valor;
     }
-    public set idade(idade:number) {
-        this._idade =idade;
+    public set idade(valor: number){
+        this._idade = valor;
     }
-    public set especie(especie:string) {
-        this._especie = especie;
+    public set especie(valor: string){
+        this._especie = valor;
     }
-    public set cor(cor:string) {
-        this._cor = cor;
+    public set cor(valor: string){
+        this._cor = valor;
     }
 
-    public vizualizar(): void{
-        console.log(`\nNome: ${this._nome}\nIdade: ${this._idade}\nEspecie: ${this._especie}\nCor: ${this._cor}`)
+    //metodo visualizar
+    public visualizar(): void{
+       console.log("\nInformacoes do animal cadastrado: ");
+       console.log(`Nome: ${this._nome}`);  
+       console.log(`Idade: ${this._idade}`);
+       console.log(`Especie: ${this._especie}`);
+       console.log(`Cor: ${this._cor}`); 
     }
     
-
-
 }
