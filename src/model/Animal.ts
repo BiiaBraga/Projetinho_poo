@@ -4,13 +4,14 @@
  */
 
 //importações
-export class Animal{
+export abstract class Animal{
 
     //atributos
     private _nome!: string;
     private _idade!: number;
     private _especie!: string;
     private _cor!: string;
+    private _alimentado!: boolean;
 
     //construtor
     // constructor(nome: string, idade: number, especie: string, cor: string){
@@ -34,6 +35,9 @@ export class Animal{
     public get cor(): string{
         return this._cor;
     }
+    public get alimentado(): boolean{
+        return this._alimentado;
+    }
 
     //set
     public set nome(valor: string){
@@ -48,6 +52,12 @@ export class Animal{
     public set cor(valor: string){
         this._cor = valor;
     }
+    public set alimentado(valor: boolean){
+        this._alimentado = valor;
+    }
+
+    //metodo alimentar - sempre protótipo
+    public abstract alimentar():void;
 
     //metodo visualizar
     public visualizar(): void{
@@ -56,6 +66,7 @@ export class Animal{
        console.log(`Idade: ${this._idade}`);
        console.log(`Especie: ${this._especie}`);
        console.log(`Cor: ${this._cor}`); 
+       console.log(`Alimentado: ${this._alimentado}\n`); 
     }
     
 }

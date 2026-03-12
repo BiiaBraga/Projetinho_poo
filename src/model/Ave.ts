@@ -29,6 +29,12 @@ export class Ave extends Animal{
         this._voo = voo;
     }
 
+    //metodo alimentar
+    public alimentar():void{
+        this.alimentado = true;
+        console.log(`${this.nome} [Ave] foi alimentado com frutas!`);
+    }
+
     //metodo visualizar
     public visualizar():void{
         super.visualizar();

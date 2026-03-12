@@ -30,6 +30,12 @@ export class Mamifero extends Animal{
         this._dente = dente;
     }
 
+    //metodo alimentar
+    public alimentar():void{
+        this.alimentado = true;
+        console.log(`${this.nome} [Mamifero] foi alimentado com leite!`);
+    }
+
     //metodo visualizar
     public visualizar():void{
         super.visualizar();

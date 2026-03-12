@@ -8,22 +8,15 @@ import readlinesync = require("readline-sync");
 import { Animal } from "./src/model/Animal";
 import { Mamifero } from "./src/model/Mamifero";
 import { Ave } from "./src/model/Ave";
+import { AnimalController } from "./src/controller/AnimalController";
 
 //função principal
 export function main() {
     
-    //variaveis e constantes
-    const cadastroAnimal = new Array<Animal>();
+    //variaveis e constante
+    let animalController = new AnimalController();
     let continuar = true;
     let opcao : number;
-
-    // const batatinha = new Animal("Gato", 2, "Felino", "Preto");
-    // const animal2 = new Animal("Cachorro", 3, "Canino", "Branco");
-    // batatinha.nome = "Capivara";
-    // console.log(batatinha.nome);
-    // console.log(batatinha.idade);
-    // console.log(animal2.nome);
-    // console.log(animal2.idade);
    
     do{
         //menu
@@ -46,19 +39,19 @@ export function main() {
 
                 if(animal instanceof Mamifero){
                     animal.dente = readlinesync.question("Digite o dente do animal: ");
+                    animal.alimentar();
                 }
 
                 if(animal instanceof Ave){
                     animal.voo = readlinesync.keyInYNStrict("Digite o voo do animal: ");
+                    animal.alimentar();
                 }
 
-                cadastroAnimal.push(animal);
+                animalController.cadastrarAnimal(animal);
                 break;
 
             case 2:
-                for(let animal of cadastroAnimal){
-                    animal.visualizar();
-                }
+                animalController.listarAnimais();
                 break;
 
             default:
