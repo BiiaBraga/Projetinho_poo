@@ -39,6 +39,7 @@ export class Ave extends Animal{
     public visualizar():void{
         super.visualizar();
         console.log(`Voo: ${this._voo}`);
+        console.log(`Sou uma Ave\n`);
     }
 
 }

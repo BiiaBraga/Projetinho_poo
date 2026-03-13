@@ -20,7 +20,7 @@ export function main() {
    
     do{
         //menu
-        console.log("\n MENU \n1 - Cadastrar Animal\n2 - Listar Animais");
+        console.log("\n MENU \n1 - Cadastrar Animal\n2 - Listar Animais\n3 - Atualizar Animal\n4 - Remover Animal");
         opcao = readlinesync.questionInt("Digite a opcao desejada: ");
 
         switch(opcao){
@@ -32,6 +32,7 @@ export function main() {
 
                 animal = (opcaoAnimal == 1 ? new Mamifero() : new Ave());
 
+                animal.id = readlinesync.questionInt("Digite o id do animal: ");
                 animal.nome = readlinesync.question("Digite o nome do animal: ");
                 animal.idade = readlinesync.questionInt("Digite a idade do animal: ");
                 animal.especie = readlinesync.question("Digite a especie do animal: ");
@@ -53,6 +54,41 @@ export function main() {
             case 2:
                 animalController.listarAnimais();
                 break;
+            
+            case 3:
+                try{
+                    console.log("\nCAtualizar Animal");
+                    console.log("1 - Mamifero\n2 - Ave");
+                    let opcaoAnimal2 = readlinesync.questionInt("Digite a opcao desejada: ");
+                    let animal2 : Animal;
+
+                    animal2 = (opcaoAnimal2 == 1 ? new Mamifero() : new Ave());
+
+                    animal2.id = readlinesync.questionInt("Digite o id do animal: ");
+                    animal2.nome = readlinesync.question("Digite o nome do animal: ");
+                    animal2.idade = readlinesync.questionInt("Digite a idade do animal: ");
+                    animal2.especie = readlinesync.question("Digite a especie do animal: ");
+                    animal2.cor = readlinesync.question("Digite a cor do animal: ");
+
+                    if(animal2 instanceof Mamifero){
+                        animal2.dente = readlinesync.question("Digite o dente do animal: ");
+                        animal2.alimentar();
+                    }
+
+                    if(animal2 instanceof Ave){
+                        animal2.voo = readlinesync.keyInYNStrict("Digite o voo do animal: ");
+                        animal2.alimentar();
+                    }
+
+                    animalController.atualizarAnimal(animal2);
+                } catch(error){
+                    console.log(error);
+                }
+                break;
+            
+            case 4:
+                animalController.removerAnimal(readlinesync.questionInt("Digite o id do animal a ser removido: "));
+                break;
 
             default:
                 break;
@@ -63,4 +99,4 @@ export function main() {
     }while(continuar);
 }
 
-main();
+main(); 

@@ -7,6 +7,7 @@
 export abstract class Animal{
 
     //atributos
+    private _id!: number;
     private _nome!: string;
     private _idade!: number;
     private _especie!: string;
@@ -23,6 +24,9 @@ export abstract class Animal{
     constructor(){};
 
     //get
+    public get id(): number{
+        return this._id;
+    }
     public get nome(): string{
         return this._nome;
     }
@@ -40,6 +44,9 @@ export abstract class Animal{
     }
 
     //set
+    public set id(valor: number){
+        this._id = valor;
+    }
     public set nome(valor: string){
         this._nome = valor;
     }
@@ -62,11 +69,12 @@ export abstract class Animal{
     //metodo visualizar
     public visualizar(): void{
        console.log("\nInformacoes do animal cadastrado: ");
+       console.log(`ID: ${this._id}`);  
        console.log(`Nome: ${this._nome}`);  
        console.log(`Idade: ${this._idade}`);
        console.log(`Especie: ${this._especie}`);
        console.log(`Cor: ${this._cor}`); 
-       console.log(`Alimentado: ${this._alimentado}\n`); 
+       console.log(`Alimentado: ${this._alimentado}`); 
     }
     
 }

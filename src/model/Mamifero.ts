@@ -40,6 +40,7 @@ export class Mamifero extends Animal{
     public visualizar():void{
         super.visualizar();
         console.log(`Dentes: ${this._dente}`);
+        console.log(`Sou um mamifero\n`);
     }
 
 }
